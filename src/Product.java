@@ -17,17 +17,7 @@ public class Product {
 			imprt = m;
 			exempt = e;
 			
-//			this.name = name;
-//			if (exempt == true){
-//				this.taxRate = 0;
-//			}else{ 
-//				this.taxRate += .10;
-//			}//close if/else
-//			
-//			if (imprt == true){
-//				this.taxRate+=0.05;
-//			}
-		}//close Product constructor
+					}//close Product constructor
 
 		public Product(boolean isImport, String name, double price, boolean isExempt) {
 			itemName = name;
@@ -44,6 +34,21 @@ public class Product {
 			return "Product [imprt=" + imprt + ", itemName=" + itemName
 					+ ", itemPrice=" + itemPrice + ", exempt=" + exempt
 					+ ", taxRate=" + taxRate + "]";
+		}
+//applying tax to each item
+		public double getTax() {
+			
+			if (exempt == true){
+				taxRate = new BigDecimal(0);
+			}else{ 
+				//add operator only works with primitives, so used BigDecimal add method to add 10% tax
+				taxRate.add(BigDecimal.valueOf(.10));
+			}//close if/else
+			
+			if (imprt == true){
+				taxRate += 0.05;
+			}
+			return 0;
 		}
 		
 	

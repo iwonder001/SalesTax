@@ -8,7 +8,7 @@ public class MainApp {
 // Create arraylist with name,price, tax
 		ArrayList<Product> products = new ArrayList <Product>();
 		products.add(new Product(true, "Book", 12.49, false));
-		products.add(new Product(false, "Music CD", 14.4999, true));
+		products.add(new Product(false, "Music CD", 14.49, true));
 		products.add(new Product(true, "Chocolate Bar",.85, false));
 		products.add(new Product(true, "Imported Box of Chocolates1", 10.00,true));
 		products.add(new Product(false, "Imported Bottle of Perfume1", 47.50, true));
@@ -17,11 +17,19 @@ public class MainApp {
 		products.add(new Product(true, "Packet of Headache Pills", 9.75, false ));
 		products.add(new Product(true, "Box of Imported Chocolates2", 11.25, true ));
 		
+		//created shopping cart
 		ArrayList<Product> shoppingCart1 = new ArrayList <Product>();
-		
+		//added products to shopping cart for input 1
 		shoppingCart1.add(products.get(0));
 		shoppingCart1.add(products.get(1));
 		shoppingCart1.add(products.get(2));
+		
+		//each product calculate sales tax
+		
+		
+		//calculate total (sales tax plus price for each basket)
+		
+		
 		
 		System.out.println(shoppingCart1);
 		
