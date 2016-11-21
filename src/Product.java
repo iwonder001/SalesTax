@@ -1,17 +1,34 @@
+import java.math.BigDecimal;
 
+BigDecimal taxRate = 0; 
 public class Product {
 	// the instance variables
+	    public boolean imprt;
 		public String itemName;
-		public double itemPrice;
-		public double tax;
+		public BigDecimal itemPrice;
+		public boolean exempt;
 
 		// the constructor
-		public Product(String n, double p, double t) {
+		public Product(boolean m, String n, BigDecimal p, boolean e) {
 
 			itemName = n;
 			itemPrice = p;
-			tax = t;
-		}
+			imprt = m;
+			exempt = e;
+			
+			this.name = name;
+			if (exempt == true){
+				this.taxRate = 0;
+			}else{ 
+				this.taxRate = .10;
+			}//close if/else
+			
+			if (imprt == true){
+				this.taxRate+=0.05;
+			}
+		}//close Product constructor
+		
+		
 		// the get methods for the item name variable
 		public String getItemName() {
 			return itemName;
@@ -25,5 +42,5 @@ public class Product {
 		public double getTax(String itemName){
 			return tax;
 		}
-		}
+		}//close Product class bracket
 
