@@ -1,4 +1,6 @@
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.text.DecimalFormat;
 
  
 public class Product {
@@ -20,14 +22,68 @@ public class Product {
 //					}//close Product constructor
 
 		public Product(boolean isExempt, String name, double price, boolean isImport) {
+			//in order for me to round with BigDecimal it has to take in a MathContext number in order to have necessary precision to round
+			
 			itemName = name;
-			itemPrice = new BigDecimal(price);
+			//itemPrice = new DecimalFormat("#0.##").format(bd);
+			itemPrice = new BigDecimal(price).setScale(2,BigDecimal.ROUND_HALF_DOWN);
 //			itemPrice = itemPrice.setScale(2, BigDecimal.ROUND_CEILING);
 			imprt = isImport;
 			exempt = isExempt;
 			
 			//System.out.println(itemPrice);
 		}
+		
+
+		public boolean isImprt() {
+			return imprt;
+		}
+
+
+		public void setImprt(boolean imprt) {
+			this.imprt = imprt;
+		}
+
+
+		public String getItemName() {
+			return itemName;
+		}
+
+
+		public void setItemName(String itemName) {
+			this.itemName = itemName;
+		}
+
+
+		public BigDecimal getItemPrice() {
+			return itemPrice;
+		}
+
+
+		public void setItemPrice(BigDecimal itemPrice) {
+			this.itemPrice = itemPrice;
+		}
+
+
+		public boolean isExempt() {
+			return exempt;
+		}
+
+
+		public void setExempt(boolean exempt) {
+			this.exempt = exempt;
+		}
+
+
+		public BigDecimal getTaxRate() {
+			return taxRate;
+		}
+
+
+		public void setTaxRate(BigDecimal taxRate) {
+			this.taxRate = taxRate;
+		}
+
 
 		@Override
 		public String toString() {

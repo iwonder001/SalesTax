@@ -27,17 +27,25 @@ public class MainApp {
 		
 		//each product calculate sales tax
 		BigDecimal taxTotal = BigDecimal.valueOf(0);
-		for(Product p: shoppingCart1){
+		//for(Product p: shoppingCart1)
+		for (int i =0; i<shoppingCart1.size(); i++){
 			//sum all taxes for each product
-			taxTotal = taxTotal.add(p.getTax());
+			//taxTotal = taxTotal.add(p.getTax());
+			taxTotal = taxTotal.add(products.get(i).getTax());
+			//System.out.println(products.get(i).getItemName());
+			
 		}
+		
+		System.out.println("1 " + products.get(0).getItemName()+ " : " + products.get(0).getItemPrice());
 		System.out.println(taxTotal);
+//		System.out.println(products.get(p).getItemName(0));
+//		System.out.println(taxTotal);
 		
 		//calculate total (sales tax plus price for each basket)
 		
 		
 		
-		System.out.println(shoppingCart1);
+		//System.out.println(shoppingCart1);
 		
 		
 		
