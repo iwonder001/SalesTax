@@ -10,16 +10,16 @@ public class Product {
 		private BigDecimal taxRate;
 
 		// the constructor
-		public Product(boolean m, String n, BigDecimal p, boolean e) {
+//		public Product(boolean m, String n, BigDecimal p, boolean e) {
+//
+//			itemName = n;
+//			itemPrice = p;
+//			imprt = m;
+//			exempt = e;
+//			
+//					}//close Product constructor
 
-			itemName = n;
-			itemPrice = p;
-			imprt = m;
-			exempt = e;
-			
-					}//close Product constructor
-
-		public Product(boolean isImport, String name, double price, boolean isExempt) {
+		public Product(boolean isExempt, String name, double price, boolean isImport) {
 			itemName = name;
 			itemPrice = new BigDecimal(price);
 //			itemPrice = itemPrice.setScale(2, BigDecimal.ROUND_CEILING);
@@ -36,19 +36,25 @@ public class Product {
 					+ ", taxRate=" + taxRate + "]";
 		}
 //applying tax to each item
-		public double getTax() {
-			
-			if (exempt == true){
-				taxRate = new BigDecimal(0);
-			}else{ 
+		public BigDecimal getTax() {
+			//holding total sales tax for this product
+			taxRate = new BigDecimal(0);
+			BigDecimal taxItemPrice = new BigDecimal(0);
+			if (exempt == false){
 				//add operator only works with primitives, so used BigDecimal add method to add 10% tax
-				taxRate.add(BigDecimal.valueOf(.10));
+				taxItemPrice = itemPrice.multiply(BigDecimal.valueOf(.10));
+				//taxRate.add(taxRate = new BigDecimal(0););
 			}//close if/else
 			
 			if (imprt == true){
-				taxRate += 0.05;
+				taxItemPrice.add(itemPrice.multiply(BigDecimal.valueOf(.05)));
+				//taxRate.add(BigDecimal.valueOf(.05));d
 			}
-			return 0;
+			//multiply price times tax to get sales tax for each item
+			//System.out.println(taxItemPrice);
+			//convert BigDecimal to double
+			taxItemPrice = taxItemPrice.setScale(2, BigDecimal.ROUND_CEILING);
+			return taxItemPrice;
 		}
 		
 	

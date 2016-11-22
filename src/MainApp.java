@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 
@@ -8,7 +9,7 @@ public class MainApp {
 // Create arraylist with name,price, tax
 		ArrayList<Product> products = new ArrayList <Product>();
 		products.add(new Product(true, "Book", 12.49, false));
-		products.add(new Product(false, "Music CD", 14.49, true));
+		products.add(new Product(false, "Music CD", 14.99, true));
 		products.add(new Product(true, "Chocolate Bar",.85, false));
 		products.add(new Product(true, "Imported Box of Chocolates1", 10.00,true));
 		products.add(new Product(false, "Imported Bottle of Perfume1", 47.50, true));
@@ -25,7 +26,12 @@ public class MainApp {
 		shoppingCart1.add(products.get(2));
 		
 		//each product calculate sales tax
-		
+		BigDecimal taxTotal = BigDecimal.valueOf(0);
+		for(Product p: shoppingCart1){
+			//sum all taxes for each product
+			taxTotal = taxTotal.add(p.getTax());
+		}
+		System.out.println(taxTotal);
 		
 		//calculate total (sales tax plus price for each basket)
 		
