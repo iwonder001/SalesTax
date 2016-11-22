@@ -36,7 +36,7 @@ public class MainApp {
 			
 		}
 		
-		System.out.println("1 " + products.get(0).getItemName()+ " : " + products.get(0).getItemPrice());
+		System.out.println("1 " + products.get(0).getItemName()+ " : " + products.get(0).getItemPrice()+ "\n"+"1 " + products.get(1).getItemName()+ " : " + products.get(1).getItemPrice()+ "\n"+"1 " + products.get(2).getItemName()+ " : " + products.get(2).getItemPrice());
 		System.out.println(taxTotal);
 //		System.out.println(products.get(p).getItemName(0));
 //		System.out.println(taxTotal);
