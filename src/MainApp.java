@@ -32,33 +32,21 @@ public class MainApp {
 			//sum all taxes for each product
 			//taxTotal = taxTotal.add(p.getTax());
 			taxTotal = taxTotal.add(products.get(i).getTax());
-			//System.out.println(products.get(i).getItemName());
-			
+			//System.out.println(products.get(i).getItemName());	
 		}
-		
-		System.out.println("1 " + products.get(0).getItemName()+ " : " + products.get(0).getItemPrice()+ "\n"+"1 " + products.get(1).getItemName()+ " : " + products.get(1).getItemPrice()+ "\n"+"1 " + products.get(2).getItemName()+ " : " + products.get(2).getItemPrice());
-		System.out.println(taxTotal);
-//		System.out.println(products.get(p).getItemName(0));
-//		System.out.println(taxTotal);
-		
-		//calculate total (sales tax plus price for each basket)
-		
-		
-		
-		//System.out.println(shoppingCart1);
-		
-		
-		
-		
-		//System.out.println(products.get(0));
-		
-//		if(product.get(i).getCategoryTax.contentEquals ("none"){
-//			double tax = getItemPrice * 
-//		}
-	}
-	
-//1. ArrayList - product name and price 
-//2. GetTax method - pass
+		BigDecimal sum = new BigDecimal(0);
+
+		for (int i =0; i<shoppingCart1.size(); i++){
+
+			//Getting tax for every item. 
+		System.out.println("1 " + shoppingCart1.get(i).getItemName()+ ": " + shoppingCart1.get(i).getItemPrice().add(shoppingCart1.get(i).getTax()));
+		//going through loop and adding all items together, BigDecimal 
+		sum = sum.add(shoppingCart1.get(i).getItemPrice().add(shoppingCart1.get(i).getTax()));
+		}
+		System.out.println("Sales Taxes: " + taxTotal);
+		System.out.println("Grand Total: " + sum );
+
 	
 	
+}
 }

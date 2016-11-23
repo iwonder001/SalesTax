@@ -11,27 +11,17 @@ public class Product {
 		private boolean exempt;
 		private BigDecimal taxRate;
 
-		// the constructor
-//		public Product(boolean m, String n, BigDecimal p, boolean e) {
-//
-//			itemName = n;
-//			itemPrice = p;
-//			imprt = m;
-//			exempt = e;
-//			
-//					}//close Product constructor
-
+		
 		public Product(boolean isExempt, String name, double price, boolean isImport) {
 			//in order for me to round with BigDecimal it has to take in a MathContext number in order to have necessary precision to round
 			
 			itemName = name;
 			//itemPrice = new DecimalFormat("#0.##").format(bd);
 			itemPrice = new BigDecimal(price).setScale(2,BigDecimal.ROUND_HALF_DOWN);
-//			itemPrice = itemPrice.setScale(2, BigDecimal.ROUND_CEILING);
 			imprt = isImport;
 			exempt = isExempt;
 			
-			//System.out.println(itemPrice);
+			//TEST: System.out.println(itemPrice);
 		}
 		
 
