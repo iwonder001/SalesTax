@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MainApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 // Create arraylist with name,price, tax
 		ArrayList<Product> products = new ArrayList <Product>();
 		products.add(new Product(true, "Book", 12.49, false));
@@ -27,12 +27,11 @@ public class MainApp {
 		
 		//each product calculate sales tax
 		BigDecimal taxTotal = BigDecimal.valueOf(0);
-		//for(Product p: shoppingCart1)
 		for (int i =0; i<shoppingCart1.size(); i++){
 			//sum all taxes for each product
 			//taxTotal = taxTotal.add(p.getTax());
 			taxTotal = taxTotal.add(products.get(i).getTax());
-			//System.out.println(products.get(i).getItemName());	
+			//TEST  System.out.println(products.get(i).getItemName());	
 		}
 		BigDecimal sum = new BigDecimal(0);
 
@@ -48,7 +47,8 @@ public class MainApp {
 		System.out.println("Grand Total: " + sum );
 
 	
-		//created shopping cart for Input 2 
+		
+		      //created shopping cart for Input 2 
 				ArrayList<Product> shoppingCart2 = new ArrayList <Product>();
 				//added products to shopping cart for Input 2
 				shoppingCart2.add(products.get(3));
@@ -57,24 +57,24 @@ public class MainApp {
 				
 				//each product calculate sales tax
 				BigDecimal taxTotal1 = BigDecimal.valueOf(0);
-				//for(Product p: shoppingCart1)
-				for (int i =0; i<shoppingCart2.size(); i++){
+				for (int x =0; x<shoppingCart2.size(); x++){
 					//sum all taxes for each product
 					//taxTotal = taxTotal.add(p.getTax());
-					taxTotal1 = taxTotal1.add(products.get(i).getTax());
-//					System.out.println(products.get(i).getItemName());	
+					taxTotal1 = taxTotal1.add(products.get(x).getTax());
+				//TEST  System.out.println(products.get(i).getItemName());	
 				}
 				BigDecimal sum1 = new BigDecimal(0);
 
-				for (int i =0; i<shoppingCart2.size(); i++){
+				for (int x =0; x<shoppingCart2.size(); x++){
 
 					//Getting tax for every item. 
-				System.out.println("1 " + shoppingCart2.get(i).getItemName()+ ": " + shoppingCart2.get(i).getItemPrice().add(shoppingCart2.get(i).getTax()));
+				System.out.println("1 " + shoppingCart2.get(x).getItemName()+ ": " + shoppingCart2.get(x).getItemPrice().add(shoppingCart2.get(x).getTax()));
 				//going through loop and adding all items together, BigDecimal 
-				sum1 = sum1.add(shoppingCart2.get(i).getItemPrice().add(shoppingCart2.get(i).getTax()));
+				sum1 = sum1.add(shoppingCart2.get(x).getItemPrice().add(shoppingCart2.get(x).getTax()));
 				}
 				System.out.println("Sales Taxes: " + taxTotal1);
 				System.out.println("Grand Total: " + sum1 );
+				
 				
 				//created shopping cart for Input 3 
 				ArrayList<Product> shoppingCart3 = new ArrayList <Product>();
@@ -86,12 +86,11 @@ public class MainApp {
 				
 				//each product calculate sales tax
 				BigDecimal taxTotal2 = BigDecimal.valueOf(0);
-				//for(Product p: shoppingCart1)
 				for (int i =0; i<shoppingCart3.size(); i++){
 					//sum all taxes for each product
 					//taxTotal = taxTotal.add(p.getTax());
 					taxTotal2 = taxTotal2.add(products.get(i).getTax());
-					//System.out.println(products.get(i).getItemName());	
+					//TEST System.out.println(products.get(i).getItemName());	
 				}
 				BigDecimal sum2 = new BigDecimal(0);
 
