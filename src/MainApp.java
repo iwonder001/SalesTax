@@ -6,6 +6,7 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		
+		
 // Create arraylist with name,price, tax
 		ArrayList<Product> products = new ArrayList <Product>();
 		products.add(new Product(true, "Book", 12.49, false));
@@ -44,7 +45,7 @@ public class MainApp {
 	
 		}
 		System.out.println("Sales Taxes: " + taxTotal);
-		System.out.println("Grand Total: " + sum );
+		System.out.println("Grand Total: " + sum);
 
 	
 		
@@ -60,7 +61,7 @@ public class MainApp {
 				for (int x =0; x<shoppingCart2.size(); x++){
 					//sum all taxes for each product
 					//taxTotal = taxTotal.add(p.getTax());
-					taxTotal1 = taxTotal1.add(products.get(x).getTax());
+					taxTotal1 = taxTotal1.add(shoppingCart2.get(x).getTax());
 				//TEST  System.out.println(products.get(i).getItemName());	
 				}
 				BigDecimal sum1 = new BigDecimal(0);
@@ -89,7 +90,7 @@ public class MainApp {
 				for (int i =0; i<shoppingCart3.size(); i++){
 					//sum all taxes for each product
 					//taxTotal = taxTotal.add(p.getTax());
-					taxTotal2 = taxTotal2.add(products.get(i).getTax());
+					taxTotal2 = taxTotal2.add(shoppingCart3.get(i).getTax());
 					//TEST System.out.println(products.get(i).getItemName());	
 				}
 				BigDecimal sum2 = new BigDecimal(0);
