@@ -8,6 +8,7 @@ public class Product {
 	private boolean exempt;
 	private BigDecimal taxRate;
 
+	//constructor
 	public Product(boolean isExempt, String name, double price, boolean isImport) {
 		
 		itemName = name;
@@ -44,30 +45,30 @@ public class Product {
 		BigDecimal taxItemPrice = new BigDecimal(0);
 
 		if (exempt == false) {
-			// add operator only works with primitives, so used BigDecimal add
-			// method to add 10% tax
+			// add operator only works with primitives, so used BigDecimal add method to add 10% tax
+			// multiply price times tax to get sales tax for each item
 			taxItemPrice = itemPrice.multiply(BigDecimal.valueOf(.10));
-			// taxRate.add(taxRate = new BigDecimal(0););
-		}// close if/else
+			
+		}// close if statement
 
 		if (imprt == true) {
-			// taxItemPrice = itemPrice.multiply(BigDecimal.valueOf(.05));
+			// add operator only works with primitives, so used BigDecimal add method to add 5% tax
+			// taking exempted taxed item and multiplying 5% additional if it is exempt then putting it back into taxItemPrice container
 			taxItemPrice = taxItemPrice.add(itemPrice.multiply(BigDecimal
 					.valueOf(.05)));
-			// taxRate.add(BigDecimal.valueOf(.05));d
-		}
-		// multiply price times tax to get sales tax for each item
-
-		// System.out.println(taxItemPrice);
-		// convert BigDecimal to double
-
+			
+		}//close if statement
+		
+		// TEST   System.out.println(taxItemPrice);
+		
+		// rounding up .05 
 		taxItemPrice = new BigDecimal(
 				Math.ceil(taxItemPrice.doubleValue() * 20) / 20);
 		taxItemPrice = taxItemPrice.setScale(2, BigDecimal.ROUND_HALF_UP);
 
 		return taxItemPrice;
 
-	}
+	}//closing getTax method
 
 }// close Product class bracket
 
