@@ -33,6 +33,7 @@ public class MainApp {
 			//taxTotal = taxTotal.add(p.getTax());
 			taxTotal = taxTotal.add(products.get(i).getTax());
 			//TEST  System.out.println(products.get(i).getItemName());	
+			
 		}
 		BigDecimal sum = new BigDecimal(0);
 
@@ -62,7 +63,8 @@ public class MainApp {
 					//sum all taxes for each product
 					//taxTotal = taxTotal.add(p.getTax());
 					taxTotal1 = taxTotal1.add(shoppingCart2.get(x).getTax());
-				//TEST  System.out.println(products.get(i).getItemName());	
+				//TEST  System.out.println(products.get(i).getItemName());
+					
 				}
 				BigDecimal sum1 = new BigDecimal(0);
 

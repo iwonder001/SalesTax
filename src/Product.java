@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
  
@@ -99,10 +100,15 @@ public class Product {
 				//taxRate.add(BigDecimal.valueOf(.05));d
 			}
 			//multiply price times tax to get sales tax for each item
+			
 			//System.out.println(taxItemPrice);
 			//convert BigDecimal to double
-			taxItemPrice = taxItemPrice.setScale(2, BigDecimal.ROUND_CEILING);
+			              //  taxItemPrice = taxItemPrice.setScale(2, BigDecimal.ROUND_CEILING);
+			                taxItemPrice  =  new BigDecimal(Math.ceil(taxItemPrice.doubleValue() * 20) / 20);
+			                taxItemPrice = taxItemPrice.setScale(2, BigDecimal.ROUND_HALF_UP);
+			                //taxItemPrice.setScale(2, RoundingMode.HALF_UP);
 			return taxItemPrice;
+			
 		}
 			
 	
