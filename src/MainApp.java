@@ -10,7 +10,7 @@ public class MainApp {
 // Create arraylist with name,price, tax
 		ArrayList<Product> products = new ArrayList <Product>();
 		products.add(new Product(true, "Book", 12.49, false));
-		products.add(new Product(false, "Music CD", 14.99, true));
+		products.add(new Product(false, "Music CD", 14.99, false));
 		products.add(new Product(true, "Chocolate Bar",.85, false));
 		products.add(new Product(true, "Imported Box of Chocolates1", 10.00,true));
 		products.add(new Product(false, "Imported Bottle of Perfume1", 47.50, true));
